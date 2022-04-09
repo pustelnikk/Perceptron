@@ -113,7 +113,7 @@ def main():
             
         net = 0.0-theta
         y = 0.0
-        d = exp_vals[test_list[i][vector_size]] #oczekiwana wartość dla nazwy gatunku 1 -> versi, 0 -> virginica
+        d = exp_vals[test_list[i][vector_size]] 
         
         for j in range(vector_size):
             net += float(train_list[i][j]) * w[j]
@@ -136,7 +136,6 @@ def main():
 
         net = 0.0-theta
         y = 0.0
-        #oczekiwana wartość dla nazwy gatunku 1 -> versi, 0 -> virginica
         
         for j in range(len(vector)):
             net += float(vector[j]) * float(w[j])
