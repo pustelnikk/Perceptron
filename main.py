@@ -72,10 +72,6 @@ def main():
     net = 0.0-theta
     
 
-    
-    
-
-    
     print(w)
     print("Uczę się...")
     
@@ -136,7 +132,7 @@ def main():
 
         net = 0.0-theta
         y = 0.0
-        
+
         for j in range(len(vector)):
             net += float(vector[j]) * float(w[j])
         
