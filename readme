@@ -1,5 +1,5 @@
 This is an implementation of a discrete perceptron for my AI class.
-It's trained and tested on a Iris subsets.
+It's trained and tested on Iris subsets.
 
 Some math behind it:
 
