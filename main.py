@@ -120,7 +120,7 @@ def main():
         if d == y:
             acc += 1.0
 
-    print(f'Dokladnosc: {float(acc)/float(len(test_list))*100.0}\nAcc: {acc}')
+    print(f'Dokladnosc: {float(acc)/float(len(test_list))*100.0}\Hits: {acc}')
 
 
     print(f'Wprowadz wektor {vector_size} wymiarowy w formacie "a,b,c,...x"\nType exit to exit') 
