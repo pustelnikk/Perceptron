@@ -1,9 +1,6 @@
-
 import sys
 import csv
 import random
-
-from numpy import mat
 
 
 
@@ -62,7 +59,7 @@ def update_deviation(deviation, learning_constant, expected_val, calculated_val)
 
 
 def main():
-    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+   
     
     alpha = input_learning_constant()
     train_list = csv_to_list("train.csv")
@@ -71,9 +68,7 @@ def main():
     theta = random.uniform(0.0,1.0)
     w = [0.6323841161037083, 0.0027737141178670044, 0.22507671980644678, 0.5398514648934943] #create_weight_list(vector_size)
     exp_vals = { "Iris-versicolor" : 1.0, 'Iris-virginica' : 0.0}
-    correct = 0.0
     acc = 0.0
-
     net = 0.0-theta
     
 
@@ -83,6 +78,7 @@ def main():
     
     print(w)
     print("Uczę się...")
+    
     #pętla epok
     for i in range(1000):
         error = 0.0
@@ -92,37 +88,27 @@ def main():
             
             net = 0.0-theta
             y = 0.0
-            d = exp_vals[train_list[k][vector_size]] #oczekiwana wartość dla nazwy gatunku 1 -> versi, 0 -> virginica
-
+            d = exp_vals[train_list[k][vector_size]] #oczekiwana wartość dla nazwy gatunku key=Versicolor-> 1.0, key=virginica -> 0.0
+            
             #trenowanie pojedycznego przypadku
             for j in range(vector_size):
                 net += float(train_list[k][j]) * w[j]
-            
-            #print(f"\t\t\t{net}")
-
 
             if net >= 0:
                 y = 1.0
             
-            # #porównuje oczekiwaną nazwe z przewidywana
-            #print(f'{i} - D: {d}, Y: {y}')
             w = update_weights(w, alpha, d,y, train_list[k])
             theta = update_deviation(theta, alpha, d, y)
             
-            
-
             error += (d-y)**2
         
         error = float(error) / float(len(train_list))
         print(f'Error: {error}')
-        # if error <= 0.03:
-        #     break
-
+     
     print(w)
     print(f'Theta: {theta}, alfa: {alpha}')
+    
     print("Testuję...")
-
-
     for i in range(len(test_list)):
             
         net = 0.0-theta
@@ -141,7 +127,7 @@ def main():
     print(f'Dokladnosc: {float(acc)/float(len(test_list))*100.0}\nAcc: {acc}')
 
 
-    print(f'Wprowadz wektor {vector_size} wymiarowy w formacie "a,b,c,...x"\nType exit to exit')
+    print(f'Wprowadz wektor {vector_size} wymiarowy w formacie "a,b,c,...x"\nType exit to exit') 
     while True:
         temp = input()
         if(temp == "exit"):
