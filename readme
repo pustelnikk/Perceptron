@@ -1,0 +1,23 @@
+This is an implementation of a discrete perceptron for my AI class.
+It's trained and tested on a Iris subsets.
+
+Some math behind it:
+
+weight vector is updated according to this formula:
+w' = w + alpha*(d-y)*X
+
+the devation is updated according to this formula:
+
+theta' = theta - alpha*(d-y)
+
+where:
+w' - new weight vector
+w - old weight vector
+alpha - learning constant
+d - expected output
+y - calculated output
+X - current case/observation vector
+theta' - new devation
+theta - old devation
+
+inital weights and devation are chosen randomly 
